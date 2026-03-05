@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.lang.NonNull;
 
 import java.util.Optional;
 
@@ -19,7 +20,8 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
 //    @Query("SELECT t FROM Toodo t " +
 //            "LEFT JOIN FETCH t.user " +
 //            "WHERE t.id = :todoId")
-    Optional<Todo> findByIdWithUser(@Param("todoId") Long todoId);
+    @NonNull
+    Optional<Todo> findById(@Param("todoId") @NonNull Long todoId);
 
     int countById(Long todoId);
 }
