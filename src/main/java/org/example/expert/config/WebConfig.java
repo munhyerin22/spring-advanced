@@ -11,7 +11,7 @@ import java.util.List;
 @Configuration
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
-
+    //WebConfig class 생성 완료
     private final AuthUserArgumentResolver authUserArgumentResolver;
 
     @Override

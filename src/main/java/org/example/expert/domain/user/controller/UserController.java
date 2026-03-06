@@ -22,6 +22,7 @@ public class UserController {
     }
 
     @PutMapping("/users")
+    // Controller @Valid 추가 완 -> 이거 없으면 DTO에 size, Pattern을 인식을 못함.
     public void changePassword(@Auth AuthUser authUser, @Valid @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
     }

@@ -25,6 +25,7 @@ public class UserService {
 
     @Transactional
     public void changePassword(long userId, UserChangePasswordRequest userChangePasswordRequest) {
+        // API의 요청 DTO에서 처리할 수 있게 개선 완료 DTO에서 검문을 하기 때문에 해당 코드는 불필요
 //        if (userChangePasswordRequest.getNewPassword().length() < 8 ||
 //                !userChangePasswordRequest.getNewPassword().matches(".*\\d.*") ||
 //                !userChangePasswordRequest.getNewPassword().matches(".*[A-Z].*")) {

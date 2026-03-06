@@ -26,6 +26,7 @@ public class AuthService {
     @Transactional
     public SignupResponse signup(SignupRequest signupRequest) {
 
+        // Fail Fast 처리 완료
         if(signupRequest.getEmail() == null){
             throw new InvalidRequestException("이메일은 필수입니다.");
         }

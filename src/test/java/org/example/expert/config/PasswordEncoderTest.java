@@ -20,6 +20,7 @@ class PasswordEncoderTest {
         String encodedPassword = passwordEncoder.encode(rawPassword);
 
         // when
+        // 원래 비밀번호 rawPassword가 먼저, 암호화한 비밀번호 encodedPassword가 뒤로 순서 변경 완
         boolean matches = passwordEncoder.matches(rawPassword, encodedPassword);
 
         // then

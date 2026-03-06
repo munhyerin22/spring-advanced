@@ -39,6 +39,7 @@ class ManagerServiceTest {
     private ManagerService managerService;
 
     @Test
+    //NPE 에러가 아닌 InvalidRequestExcption에러를 던진다 -> 이름 수정
     public void manager_목록_조회_시_Todo가_없다면_InvalidRequestExcption_에러를_던진다() {
         // given
         long todoId = 1L;
@@ -46,6 +47,7 @@ class ManagerServiceTest {
 
         // when & then
         InvalidRequestException exception = assertThrows(InvalidRequestException.class, () -> managerService.getManagers(todoId));
+        // manager not found가 아니라 Toodo not found로 수정 완
         assertEquals("Todo not found", exception.getMessage());
     }
 

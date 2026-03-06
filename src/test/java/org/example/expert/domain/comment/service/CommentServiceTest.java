@@ -44,6 +44,7 @@ class CommentServiceTest {
         given(todoRepository.findById(anyLong())).willReturn(Optional.empty());
 
         // when
+        // ServerExcption으로 에러를 던지는 것이 아닌 InvalidRequestException으로 에러를 던짐.
         InvalidRequestException exception = assertThrows(InvalidRequestException.class, () -> {
             commentService.saveComment(authUser, todoId, request);
         });
